@@ -41,10 +41,6 @@ input_field = driver.find_element(By.ID,'id_city')
 input_field.clear()  # Clear any existing text
 input_field.send_keys('Toronto')
 
-# Add a wait of 10 seconds for the element to be located
-wait = WebDriverWait(driver, 20)
-button = wait.until(EC.presence_of_element_located((By.ID, 'submit')))
-
 # Click the "Get Weather" button
 button = driver.find_element(By.ID,'submit')
 button.click()
