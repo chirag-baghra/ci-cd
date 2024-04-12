@@ -1,6 +1,8 @@
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.by import By
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.chrome.service import Service
 from webdriver_manager.chrome import ChromeDriverManager
@@ -20,6 +22,8 @@ driver.get('http://127.0.0.1:8000/')
 # # Find an input field and enter text
 
 # input_field.send_keys('test')
+
+
 
 # # Click a button
 # button = driver.find_element_by_id('button_id')
