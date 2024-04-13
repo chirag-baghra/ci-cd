@@ -39,7 +39,7 @@ driver.get('http://127.0.0.1:8000/')
 # Find the input field by its ID and enter "Toronto"
 input_field = driver.find_element(By.ID,'id_city')
 input_field.clear()  # Clear any existing text
-input_field.send_keys('Toronto')
+input_field.send_keys('1234')
 
 # Click the "Get Weather" button
 button = driver.find_element(By.ID,'submit')
