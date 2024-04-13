@@ -25,3 +25,4 @@ EXPOSE 8000
 CMD ["python", "manage.py", "test_and_runserver", "0.0.0.0:8000"]
 
 
+# test
