@@ -54,7 +54,7 @@ pipeline {
         script {
             // Start the Docker container
             sh """
-    ssh -v -o StrictHostKeyChecking=no -i ${privateKey} ubuntu@${env.EC2_IP} '
+    ssh -v -o StrictHostKeyChecking=no -i ${key_path} ubuntu@${env.EC2_IP} '
         # Get the container ID of any container running on port 8000
                         container_id=\$(docker ps --filter "publish=8000" -q)
 
@@ -79,7 +79,7 @@ pipeline {
             // Execute Selenium tests against the Docker container on the development server
             def testResult = sh (
                 script: """
-                    ssh -o StrictHostKeyChecking=no -i ${privateKey} ubuntu@${env.EC2_IP} 'bash -sx' << 'EOF'
+                    ssh -o StrictHostKeyChecking=no -i ${key_path} ubuntu@${env.EC2_IP} 'bash -sx' << 'EOF'
                         containerId=\$(sudo docker ps -qf "ancestor=jobychacko/weather-app:latest")
                         sudo docker exec \$containerId python3 /app/selenium_test.py
                     EOF
